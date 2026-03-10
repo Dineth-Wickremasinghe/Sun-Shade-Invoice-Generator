@@ -67,6 +67,17 @@ class DatabaseManager:
             )
         """)
 
+        # Payments table: records payments made by customers
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS payments (
+                id            INTEGER PRIMARY KEY AUTOINCREMENT,
+                customer_name TEXT NOT NULL,
+                amount        REAL NOT NULL,
+                date          TEXT NOT NULL,
+                note          TEXT
+            )
+        """)
+
         self.commit()
         print("Database tables created/verified successfully.")
 

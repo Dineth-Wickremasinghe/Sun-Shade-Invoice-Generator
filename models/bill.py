@@ -59,8 +59,7 @@ class Bill:
 
     def __post_init__(self):
         self.customer_name = self.customer_name.strip()
-        if not self.customer_name:
-            raise ValueError("Customer name cannot be empty.")
+
 
     def add_item(self, bill_item: BillItem):
         """Add a line item to this bill."""
